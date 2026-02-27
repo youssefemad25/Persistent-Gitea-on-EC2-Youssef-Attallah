@@ -1,0 +1,23 @@
+Command used: 
+
+docker run -d \
+  --name gitea \
+  --restart always \
+  -p 3000:3000 \
+  -p 222:22 \
+  -v /home/ubuntu/data:/data \
+  gitea/gitea:latest
+
+Equivalent Compose file based on chatgpt: 
+
+version: "3.9"
+services:
+  gitea:
+    image: gitea/gitea:latest
+    container_name: gitea
+    restart: always
+    ports:
+      - "3000:3000"
+      - "222:22"
+    volumes:
+      - /home/ubuntu/data:/data
