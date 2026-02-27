@@ -3,7 +3,7 @@
 # Architecture summary
 This project deploys Gitea inside a Docker container running on an AWS EC2 Ubuntu instance. A 10GB EBS volume is attached to the instance mounted at /home/ubuntu/data. The Docker container uses a bind mount to ensure persistent storage outside the container. Backups of the Gitea data directory are created as compressed archives and uploaded to an Amazon S3 bucket for durable off-instance storage. The system supports full restoration of repositories from S3 backups.
 
-#Deployment instructions
+# Deployment instructions
 Attach and Mount EBS Volume:
 lsblk
 sudo mkfs.ext4 /dev/nvme1n1
